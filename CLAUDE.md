@@ -113,6 +113,11 @@ For optimal results:
 
 ## Development Guidelines
 
+### Note Tracking
+- When the user says "(note this)" in conversation, always add the information to CLAUDE.md in the appropriate section for future reference
+- Ensure to organize notes under relevant headings to maintain document structure
+- Update existing information when notes provide new guidance or clarifications
+
 ### Package Management & Build
 - Python package management: `uv add <package>` (NEVER pip)
 - Running Python tools: `uv run <tool>`
@@ -185,24 +190,29 @@ For optimal results:
 
 When developing our own local MCP servers:
 
-1. **Reference Implementation First**:
+1. **Prototype First**:
+   - Develop initial versions in the `playground/` directory first
+   - Test functionality thoroughly before moving to `mcp-servers/`
+   - Use the playground for experimentation and rapid iteration
+
+2. **Reference Implementation First**:
    - Study the original server in `MCP_REPO_PATH`
    - Understand its API, behavior, and implementation details
    - Document the key functions and features
 
-2. **Implementation Strategy**:
+3. **Implementation Strategy**:
    - Start by mimicking the reference server exactly
    - Once basic functionality is working, add extensions
    - Ensure backward compatibility
 
-3. **Code Quality**:
+4. **Code Quality**:
    - Use proper typing (TypeScript/Python type hints)
    - Add comprehensive documentation
    - Implement proper error handling
    - Follow consistent naming conventions
    - Write tests for all functionality
 
-4. **Documentation**:
+5. **Documentation**:
    - Update README.md for each server
    - Document extensions and differences from reference implementation
    - Provide usage examples
