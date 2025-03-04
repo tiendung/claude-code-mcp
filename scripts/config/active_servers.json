@@ -1,0 +1,58 @@
+{
+  "servers": [
+    {
+      "name": "brave-search",
+      "enabled": true,
+      "method": "node",
+      "env_vars": ["BRAVE_API_KEY"]
+    },
+    {
+      "name": "github",
+      "enabled": true,
+      "method": "node",
+      "env_vars": ["GITHUB_TOKEN"]
+    },
+    {
+      "name": "filesystem",
+      "enabled": true,
+      "method": "node",
+      "env_vars": ["ALLOWED_PATHS"]
+    },
+    {
+      "name": "fetch",
+      "enabled": true,
+      "method": "python",
+      "env_vars": []
+    },
+    {
+      "name": "memory",
+      "enabled": true,
+      "method": "node",
+      "env_vars": ["MEMORY_FILE_PATH"]
+    },
+    {
+      "name": "linear",
+      "enabled": true,
+      "method": "node",
+      "env_vars": ["LINEAR_API_KEY"]
+    },
+    {
+      "name": "e2b",
+      "enabled": true,
+      "method": "node",
+      "env_vars": ["E2B_API_KEY"]
+    },
+    {
+      "name": "sqlite",
+      "enabled": true,
+      "method": "python",
+      "env_vars": ["CLAUDE_SQLITE_PATH"]
+    },
+    {
+      "name": "slack",
+      "enabled": true,
+      "method": "node",
+      "env_vars": ["SLACK_BOT_TOKEN", "SLACK_TEAM_ID"]
+    }
+  ]
+}

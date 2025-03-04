@@ -1,0 +1,28 @@
+{
+  "name": "claude-code-mcp-servers",
+  "version": "0.1.0",
+  "description": "Custom MCP servers for Claude Code",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "workspaces": [
+    "brave-search",
+    "github",
+    "memory",
+    "filesystem",
+    "fetch",
+    "e2b",
+    "linear",
+    "slack",
+    "sqlite"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces",
+    "clean": "rm -rf */dist"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "shx": "^0.3.4",
+    "typescript": "^5.6.2"
+  }
+}

@@ -1,0 +1,50 @@
+#!/bin/bash
+# Script to configure and register local MCP servers
+
+export CLAUDE_FILESYSTEM_PATH="$HOME/dev"
+export MCP_REPO_PATH="$HOME/dev/mcp-servers-repo" # clone of https://github.com/modelcontextprotocol/servers
+export MCP_LOCAL_PATH="$HOME/dev/claude-code/mcp-servers"
+export CLAUDE_MEMORY_PATH="$HOME/dev/claude-code/data/memory/memory.json"
+export CLAUDE_SQLITE_PATH="$HOME/dev/claude-code/data/sqlite/test.db"
+
+# First remove any existing servers with the same names
+claude mcp remove brave-search
+claude mcp remove github
+claude mcp remove memory 
+claude mcp remove filesystem
+claude mcp remove fetch
+claude mcp remove e2b
+claude mcp remove linear
+claude mcp remove slack
+claude mcp remove sqlite
+
+# Local TypeScript/JavaScript MCP servers
+echo "Registering brave-search server..."
+claude mcp add brave-search -e BRAVE_API_KEY=$BRAVE_API_KEY -- node $MCP_LOCAL_PATH/brave-search/dist/index.js
+
+echo "Registering github server..."
+claude mcp add github -e GITHUB_PERSONAL_ACCESS_TOKEN=$GITHUB_TOKEN -- node $MCP_LOCAL_PATH/github/dist/index.js
+
+echo "Registering memory server..."
+claude mcp add memory -e MEMORY_FILE_PATH=$CLAUDE_MEMORY_PATH -- node $MCP_LOCAL_PATH/memory/dist/index.js
+
+echo "Registering filesystem server..."
+claude mcp add filesystem -- node $MCP_LOCAL_PATH/filesystem/dist/index.js $CLAUDE_FILESYSTEM_PATH
+
+echo "Registering e2b server..."
+claude mcp add e2b -e E2B_API_KEY=$E2B_API_KEY -- node $MCP_LOCAL_PATH/e2b/dist/index.js
+
+echo "Registering linear server..."
+claude mcp add linear -e LINEAR_API_KEY=$LINEAR_API_KEY -- node $MCP_LOCAL_PATH/linear/dist/index.js
+
+echo "Registering slack server..."
+claude mcp add slack -e SLACK_BOT_TOKEN=$SLACK_CLAUDE_BOT_TOKEN SLACK_TEAM_ID=$SLACK_TEAM_ID -- node $MCP_LOCAL_PATH/slack/dist/index.js
+
+# Local Python MCP servers
+echo "Registering fetch server..."
+claude mcp add fetch -- uv --directory "${MCP_LOCAL_PATH}/fetch" run mcp-server-fetch
+
+echo "Registering sqlite server..."
+claude mcp add sqlite -- uv --directory "${MCP_LOCAL_PATH}/sqlite" run mcp-server-sqlite --db-path $CLAUDE_SQLITE_PATH
+
+echo "Local MCP servers registered."
