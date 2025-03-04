@@ -1,0 +1,23 @@
+export CLAUDE_FILESYSTEM_PATH="$HOME/dev"
+export MCP_REPO_PATH="$HOME/dev/mcp-servers-repo" # clone of https://github.com/modelcontextprotocol/servers
+export MCP_LOCAL_PATH="$HOME/dev/claude-code/mcp-servers"
+export CLAUDE_MEMORY_PATH="$HOME/dev/claude-code/data/memory/memory.json"
+export CLAUDE_SQLITE_PATH="$HOME/dev/claude-code/data/sqlite/test.db"
+
+# installable js/ts servers
+claude mcp add filesystem -- npx -y @modelcontextprotocol/server-filesystem $CLAUDE_FILESYSTEM_PATH
+claude mcp add memory -e MEMORY_FILE_PATH=$CLAUDE_MEMORY_PATH -- npx -y @modelcontextprotocol/server-memory
+claude mcp add brave-search -e BRAVE_API_KEY=$BRAVE_API_KEY -- npx -y @modelcontextprotocol/server-brave-search
+claude mcp add github -e GITHUB_PERSONAL_ACCESS_TOKEN=$GITHUB_TOKEN -- npx -y @modelcontextprotocol/server-github
+claude mcp add linear -e LINEAR_API_KEY=$LINEAR_API_KEY -- npx -y @ibraheem4/linear-mcp
+claude mcp add e2b -e E2B_API_KEY=$E2B_API_KEY -- npx -y @e2b/mcp-server 
+claude mcp add slack -e SLACK_BOT_TOKEN=$SLACK_CLAUDE_BOT_TOKEN SLACK_TEAM_ID=$SLACK_TEAM_ID -- npx -y @modelcontextprotocol/server-slack 
+
+# installable python servers
+claude mcp add fetch uvx mcp-server-fetch
+
+# local js/ts servers
+
+# local python servers
+claude mcp add sqlite -- uv --directory "${MCP_REPO_PATH}/src/sqlite" run mcp-server-sqlite --db-path $CLAUDE_SQLITE_PATH
+claude
