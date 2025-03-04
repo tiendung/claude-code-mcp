@@ -1,0 +1,69 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+**/build/
+**/dist/
+wheels/
+*.egg-info
+.pyenv/
+.uv/
+# .python-version - Keep this for reproducibility
+
+# Virtual environments
+.venv
+venv/
+env/
+.env
+
+# Node.js
+**/node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.pnpm-debug.log
+.yarn/
+
+# TypeScript
+*.tsbuildinfo
+**/dist/
+**/build/
+**/*.js.map
+**/.cache/
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Package manager lock files (uncomment if needed)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Python packaging
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# MCP server specific
+archive/
+*/archive/
+
+# Git related files in subfolders
+mcp-servers/*/.git/
+mcp-servers/*/.gitignore
+mcp-servers/*/.github/
