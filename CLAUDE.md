@@ -162,6 +162,8 @@ For optimal results:
 - For user-reported fixes: `git commit --trailer "Reported-by:<user>"`
 - For GitHub issues: `git commit --trailer "Github-Issue:#<number>"`
 - Always use `git add .` and rely on .gitignore to exclude files, rather than manually selecting files
+- ALWAYS push to the private repository (`git push private main`) by default
+- Only push to the public repository (`git push origin main`) when explicitly requested
 - NEVER mention co-authored-by or tools used to create commits/PRs
 
 ### GitHub Commit Attribution
