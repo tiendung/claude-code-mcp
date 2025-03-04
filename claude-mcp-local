@@ -17,6 +17,7 @@ claude mcp remove e2b
 claude mcp remove linear
 claude mcp remove slack
 claude mcp remove sqlite
+claude mcp remove research-papers
 
 # Local TypeScript/JavaScript MCP servers
 echo "Registering brave-search server..."
@@ -46,5 +47,9 @@ claude mcp add fetch -- uv --directory "${MCP_LOCAL_PATH}/fetch" run mcp-server-
 
 echo "Registering sqlite server..."
 claude mcp add sqlite -- uv --directory "${MCP_LOCAL_PATH}/sqlite" run mcp-server-sqlite --db-path $CLAUDE_SQLITE_PATH
+
+# Research MCP servers
+echo "Registering research-papers server..."
+claude mcp add research-papers -- node "${MCP_LOCAL_PATH}/research-papers/dist/index.js"
 
 echo "Local MCP servers registered."

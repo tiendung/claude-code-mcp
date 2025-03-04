@@ -69,6 +69,47 @@ The script uses `claude mcp add` commands to register servers with Claude. It us
 - **slack** - Slack communication
 - **linear** - Linear issue tracking integration
 - **e2b** - Code execution sandbox
+- **research-papers** - Research paper management with Semantic Scholar integration
+
+### MCP Server Usage Guidelines
+
+When to use specific MCP servers:
+
+- **brave-search**: Use for general web searches and finding current information.
+  - Best for: Finding documentation, articles, tutorials, product information
+  - Example: `mcp__brave-search__brave_web_search(query="python type hints tutorial")`
+
+- **github**: Use for interacting with GitHub repositories.
+  - Best for: Examining code, creating issues/PRs, searching repos, accessing GitHub content
+  - Example: `mcp__github__search_repositories(query="semantic scholar api")`
+
+- **filesystem**: Use for reading and manipulating local files.
+  - Best for: Reading, writing, and exploring files in allowed directories
+  - Example: `mcp__filesystem__read_file(path="/path/to/file")`
+
+- **fetch**: Use for downloading web content directly.
+  - Best for: Reading web articles, documentation, accessing external APIs
+  - Example: `mcp__fetch__fetch(url="https://example.com/api/docs")`
+
+- **memory**: Use for persistent knowledge storage across sessions.
+  - Best for: Storing user preferences, frequently used commands, project context
+  - Example: `mcp__memory__create_entities(...)`
+
+- **sqlite**: Use for structured data storage and querying.
+  - Best for: Storing tabular data, performing complex queries, data analysis
+  - Example: `mcp__sqlite__read_query(query="SELECT * FROM table")`
+
+- **research-papers**: Use for academic research and paper management.
+  - Best for: Searching academic papers, organizing research, tracking citations
+  - Available tools: paper search, collections, tagging, citation management
+  - Example: Search for papers about machine learning, create collections, add notes
+
+For optimal results:
+1. Choose the most specific server for your task
+2. Combine servers when needed (e.g., search with brave-search, then fetch details)
+3. Use filesystem for local operations and fetch for remote content
+4. Use github for repository-specific operations
+5. Consider research-papers for academic literature search instead of generic web search
 
 ## Development Guidelines
 
@@ -120,6 +161,7 @@ The script uses `claude mcp add` commands to register servers with Claude. It us
 - Develop in separate branches, merge to main quickly
 - For user-reported fixes: `git commit --trailer "Reported-by:<user>"`
 - For GitHub issues: `git commit --trailer "Github-Issue:#<number>"`
+- Always use `git add .` and rely on .gitignore to exclude files, rather than manually selecting files
 - NEVER mention co-authored-by or tools used to create commits/PRs
 
 ### GitHub Commit Attribution

@@ -63,6 +63,9 @@ htmlcov/
 archive/
 */archive/
 
+# Playground folder for testing
+playground/
+
 # Git related files in subfolders
 mcp-servers/*/.git/
 mcp-servers/*/.gitignore

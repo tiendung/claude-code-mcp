@@ -1,0 +1,5 @@
+# Keep the data directory structure but ignore all content
+*
+!.gitignore
+!*/
+*/*/
