@@ -1,0 +1,20 @@
+{
+  "image": "agent-mcp:latest",
+  "config": {
+    "memory": 536870912,
+    "cpus": 1,
+    "ports": [],
+    "environment": {
+      "LOG_LEVEL": "INFO",
+      "NODE_ENV": "production"
+    },
+    "labels": {
+      "mcp.server.type": "agent-mcp",
+      "mcp.description": "MCP server for creating and managing agents"
+    }
+  },
+  "build": {
+    "context": "../playground/agent-mcp",
+    "dockerfile": "Dockerfile"
+  }
+}
