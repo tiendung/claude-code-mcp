@@ -1,6 +1,6 @@
-import { EventEmitter } from 'events';
-import { createInterface } from 'readline';
-import { spawn } from 'child_process';
+import { EventEmitter } from 'node:events';
+import { createInterface } from 'node:readline';
+import { spawn } from 'node:child_process';
 
 // Configuration
 const MCP_SERVER_PATH = './dist/index.js';

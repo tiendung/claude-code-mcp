@@ -1,0 +1,9 @@
+{
+  "image": "python:3.12-slim",
+  "config": {
+    "labels": {
+      "mcp.description": "Custom Python 3.12 environment with network access",
+      "custom": "true"
+    }
+  }
+}

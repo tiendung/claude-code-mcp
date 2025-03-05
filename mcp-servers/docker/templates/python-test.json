@@ -1,0 +1,17 @@
+{
+  "image": "python:3.11-slim", 
+  "config": {
+    "memory": 536870912, 
+    "cpus": 1, 
+    "ports": [], 
+    "environment": {
+      "LOG_LEVEL": "INFO", 
+      "PYTHONUNBUFFERED": "1"
+    }, 
+    "labels": {
+      "dev.type": "python-test", 
+      "dev.description": "Python 3.11 container for testing"
+    }, 
+    "command": ["python", "-c", "import time; print('Python test container started'); counter=0; while True: counter += 1; print(f'Heartbeat {counter}: {time.time()}'); time.sleep(5)"]
+  }
+}

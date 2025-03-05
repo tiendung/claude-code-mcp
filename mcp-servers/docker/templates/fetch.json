@@ -1,0 +1,23 @@
+{
+  "image": "fetch-mcp:latest",
+  "config": {
+    "memory": 536870912,
+    "cpus": 1,
+    "ports": [],
+    "environment": {
+      "LOG_LEVEL": "INFO"
+    },
+    "labels": {
+      "dev.type": "fetch",
+      "dev.description": "MCP server for fetching web content"
+    }
+  },
+  "build": {
+    "context": "../../mcp-servers/fetch",
+    "type": "python-mcp-server",
+    "options": {
+      "pythonVersion": "3.11-slim",
+      "requiredEnvVars": []
+    }
+  }
+}
