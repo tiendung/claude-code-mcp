@@ -47,16 +47,12 @@ claude mcp list
 | fetch | Web page fetching | PyPI package |
 | memory | Knowledge graph for persistent memory | npm package |
 | sqlite | Database operations | Local implementation |
-| slack | Slack communication | npm package |
-| linear | Linear issue tracking | npm package |
 | e2b | Code execution sandbox | npm package |
 
 ## Required Environment Variables
 
 - `BRAVE_API_KEY` - For brave-search server
 - `GITHUB_TOKEN` - For GitHub operations
-- `LINEAR_API_KEY` - For Linear issue tracking
-- `SLACK_BOT_TOKEN` and `SLACK_TEAM_ID` - For Slack communication
 - `E2B_API_KEY` - For code execution sandbox
 - `ALLOWED_PATHS` - For filesystem access control (defaults to project root)
 
