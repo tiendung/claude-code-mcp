@@ -1,3 +1,4 @@
+// This file is deprecated as the Docker MCP server has been removed
 import Dockerode from 'dockerode';
 import path from 'path';
 import { spawn } from 'child_process';

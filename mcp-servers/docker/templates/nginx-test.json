@@ -1,1 +1,0 @@
-{"image": "nginx:alpine", "config": {"memory": 536870912, "cpus": 1, "ports": [{"host": 8080, "container": 80}], "environment": {}, "labels": {"mcp.server.type": "nginx-test", "mcp.description": "Nginx web server for testing"}}}

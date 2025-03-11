@@ -15,11 +15,11 @@ claude mcp remove memory
 claude mcp remove filesystem
 claude mcp remove fetch
 claude mcp remove e2b
-claude mcp remove linear
-claude mcp remove slack
+# claude mcp remove linear  # removed
+# claude mcp remove slack   # removed
 claude mcp remove sqlite
 claude mcp remove research-papers
-claude mcp remove docker
+# claude mcp remove docker  # removed
 claude mcp remove mcp-test
 
 # Local TypeScript/JavaScript MCP servers
@@ -38,15 +38,15 @@ claude mcp add filesystem -- node $MCP_LOCAL_PATH/filesystem/dist/index.js $CLAU
 echo "Registering e2b server..."
 claude mcp add e2b -e E2B_API_KEY=$E2B_API_KEY -- node $MCP_LOCAL_PATH/e2b/dist/index.js
 
-echo "Registering linear server..."
-claude mcp add linear -e LINEAR_API_KEY=$LINEAR_API_KEY -- node $MCP_LOCAL_PATH/linear/dist/index.js
+# echo "Registering linear server..."
+# claude mcp add linear -e LINEAR_API_KEY=$LINEAR_API_KEY -- node $MCP_LOCAL_PATH/linear/dist/index.js
 
-echo "Registering slack server..."
-claude mcp add slack -e SLACK_BOT_TOKEN=$SLACK_CLAUDE_BOT_TOKEN SLACK_TEAM_ID=$SLACK_TEAM_ID -- node $MCP_LOCAL_PATH/slack/dist/index.js
+# echo "Registering slack server..."
+# claude mcp add slack -e SLACK_BOT_TOKEN=$SLACK_CLAUDE_BOT_TOKEN SLACK_TEAM_ID=$SLACK_TEAM_ID -- node $MCP_LOCAL_PATH/slack/dist/index.js
 
 # Register Docker MCP Server - Now from production location
-echo "Registering docker server..."
-claude mcp add docker -e MCP_SERVERS_PATH=$TEMPLATES_PATH CONTAINER_PREFIX=dev- -- node $MCP_LOCAL_PATH/docker/dist/index.js
+# echo "Registering docker server..."
+# claude mcp add docker -e MCP_SERVERS_PATH=$TEMPLATES_PATH CONTAINER_PREFIX=dev- -- node $MCP_LOCAL_PATH/docker/dist/index.js
 
 # Local Python MCP servers
 echo "Registering fetch server..."
